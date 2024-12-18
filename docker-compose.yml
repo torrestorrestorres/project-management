@@ -1,0 +1,27 @@
+services:
+  backend:
+    build:
+      context: ./backend
+    ports:
+      - "3000:3000"
+    volumes:
+      - ./backend:/backend       # Bindet den Backend-Code
+    environment:
+      - NODE_ENV=development
+      - DATABASE_HOST=database
+      - DATABASE_USER=app_user
+      - DATABASE_PASSWORD=secure_password
+      - DATABASE_NAME=project_management
+
+  database:
+    image: postgres:14
+    volumes:
+      - postgres_data:/var/lib/postgresql/data  # Persistentes Volume für Datenbankdaten
+      - ./database/init.sql:/docker-entrypoint-initdb.d/init.sql
+    environment:
+      POSTGRES_USER: app_user
+      POSTGRES_PASSWORD: secure_password
+      POSTGRES_DB: project_management
+
+volumes:
+  postgres_data:  # Deklariert das Volume

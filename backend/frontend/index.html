@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Project Management</title>
+</head>
+<body>
+    <h1>Project Management - Einfaches Frontend</h1>
+
+    <!-- Registrierung -->
+    <section id="register">
+        <h2>Registrieren</h2>
+        <input type="text" id="reg-name" placeholder="Name">
+        <input type="email" id="reg-email" placeholder="Email">
+        <input type="password" id="reg-password" placeholder="Passwort">
+        <button id="register-btn">Registrieren</button>
+      </section>
+      
+
+    <!-- Login -->
+    <section id="login">
+        <h2>Login</h2>
+        <input type="email" id="login-email" placeholder="Email">
+        <input type="password" id="login-password" placeholder="Passwort">
+        <button id="login-btn">Login</button>
+      </section>
+      
+
+    <!-- Daten anzeigen -->
+    <section id="data" style="display:none;">
+        <h2>Benutzer oder Aufträge</h2>
+        <button id="fetch-data-btn">Daten abrufen</button>
+        <div id="data-display"></div>
+    </section>
+
+    <script src="script.js"></script>
+</body>
+</html>
